@@ -24,3 +24,5 @@
 hs_err_pid*
 KafkaDemo.iml
 .idea/
+.gitignore
+target/
