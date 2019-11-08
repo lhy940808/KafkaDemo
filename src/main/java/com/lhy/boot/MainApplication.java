@@ -7,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author liuhaiyan
  * @date 2019-10-30 14:51
@@ -27,5 +32,15 @@ public class MainApplication {
                 e.printStackTrace();
             }
         }
+
+
+        // 以下为测试方法
+//        List<Integer> list = Arrays.asList(1,2,3,4,5,6);
+//        List<Integer> newLists = list.stream().map(ele -> getList(ele)).flatMap(List::stream).collect(Collectors.toList());
+//        System.out.println(newLists);
+
+    }
+    public static List<Integer> getList(Integer e) {
+        return Arrays.asList(e+1, e+2, e+3);
     }
 }
