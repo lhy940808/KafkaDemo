@@ -1,5 +1,6 @@
 # KafkaDemo
 kafka消息队列的java应用
+该分支用来进行一些springbooot的知识点
 
 master分支是搭建了最简单的springboot的一个web入门程序，集成了mybatis框架，可作为最简单的demo直接使用
 其他分支都是基于master分支拉取的，保证master分支是一个最干净的分支，
