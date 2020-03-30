@@ -8,3 +8,7 @@ dev分支用来列举其他方面的东西，如消息队列
 ####feature-fenkufenbiao 
 该分支用来实现分库分表的功能
 
+####遇到的问题
+刚开始没注意用mybatis插件生成的mapper配置文件，sql里用的全是b_member0这个表名，应该使用
+逻辑表名 也就是tb_member，否则会报错Missing the data source name:null  猜测是这样配置无法满足映射规则
+

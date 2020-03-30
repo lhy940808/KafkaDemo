@@ -1,6 +1,7 @@
 package com.lhy.boot.shardingSphere.service.impl;
 
-import com.lhy.boot.shardingSphere.mapper.MemberMapper;
+
+import com.lhy.boot.shardingSphere.dao.MemberMapper;
 import com.lhy.boot.shardingSphere.model.Member;
 import com.lhy.boot.shardingSphere.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;

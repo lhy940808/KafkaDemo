@@ -24,7 +24,7 @@
 
         <!-- 数据库链接URL、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/fenku1" userId="root"
+                        connectionURL="jdbc:mysql://localhost:3306/fenku2" userId="root"
                         password="12345678">
         </jdbcConnection>
 
@@ -53,7 +53,7 @@
 
         <!-- 对应的Mapper接口类文件 -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.lhy.boot.shardingSphere.mapper" targetProject="src/main/java">
+                             targetPackage="com.lhy.boot.shardingSphere.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
@@ -76,7 +76,7 @@
         <!--<table tableName="tb_user" domainObjectName="User">-->
         <!--</table>-->
 
-        <table tableName="t_member0" domainObjectName="Member"
+        <table tableName="t_member" domainObjectName="Member"
                schema="${gererator.schema}"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
