@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lhy.boot.dao.model.User;
 import com.lhy.boot.service.UserService;
+import com.lhy.boot.service.impl.TestThreadPool;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,9 @@ public class HelloController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private TestThreadPool testThreadPool;
+
     // 查询数据库一条记录
 //    @RequestMapping(value="/query", method= RequestMethod.GET)
     @RequestMapping("/query")
@@ -31,6 +35,13 @@ public class HelloController {
         Gson gson = new GsonBuilder().create();
         String json = gson.toJson(user);
         return json;
+    }
+
+    @RequestMapping("/test")
+    public void test() {
+        log.info("controller test begin ---------------");
+        testThreadPool.test();
+        log.info("controller test end ---------------");
     }
 
 }

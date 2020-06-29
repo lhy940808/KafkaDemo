@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * @author liuhaiyan
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
  */
 @SpringBootApplication(exclude = {JacksonAutoConfiguration.class})
 @MapperScan("com.lhy.boot.dao")
+@EnableAsync
 public class MainApplication {
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class, args);
