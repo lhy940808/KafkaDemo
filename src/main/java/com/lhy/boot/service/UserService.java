@@ -9,4 +9,6 @@ import com.lhy.boot.dao.model.User;
 public interface UserService {
 
     User getUserById(int id);
+
+    Long insertAndUpdate();
 }

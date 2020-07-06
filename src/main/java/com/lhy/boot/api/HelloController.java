@@ -33,4 +33,12 @@ public class HelloController {
         return json;
     }
 
+    @RequestMapping("/transaction")
+    public void testTransaction() {
+        /** 试验内部方法之间调用方法 事务是否会生效**/
+        Long id = userService.insertAndUpdate();
+        log.info("insert id:{}", id);
+
+    }
+
 }

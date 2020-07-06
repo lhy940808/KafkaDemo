@@ -142,4 +142,9 @@ public class User implements Serializable {
     public void setSex(String sex) {
         this.sex = sex == null ? null : sex.trim();
     }
+
+    @Override
+    public String toString() {
+        return "id=" + this.getId() + ";username=" + this.getUserName() + ";sex=" +this.getSex() + "age=" + this.getAge();
+    }
 }
