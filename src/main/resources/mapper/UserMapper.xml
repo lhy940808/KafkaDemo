@@ -269,4 +269,11 @@
       sex = #{sex,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id = "queryUserBypage" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tb_user
+    limit #{page}, #{pageSize}
+ </select>
 </mapper>

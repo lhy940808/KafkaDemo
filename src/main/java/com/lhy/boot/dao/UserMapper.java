@@ -93,4 +93,6 @@ public interface UserMapper {
      * @mbg.generated Wed Oct 30 15:45:52 CST 2019
      */
     int updateByPrimaryKey(User record);
+
+    List<User> queryUserBypage(@Param("page") Integer page, @Param("pageSize")Integer pageSize);
 }

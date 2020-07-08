@@ -3,13 +3,17 @@ package com.lhy.boot.api;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lhy.boot.dao.model.User;
+import com.lhy.boot.service.QueryDataByPageAsync;
 import com.lhy.boot.service.UserService;
 import com.lhy.boot.service.impl.TestThreadPool;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author liuhaiyan
@@ -24,6 +28,9 @@ public class HelloController {
 
     @Autowired
     private TestThreadPool testThreadPool;
+
+    @Autowired
+    private QueryDataByPageAsync queryDataByPageAsync;
 
     // 查询数据库一条记录
 //    @RequestMapping(value="/query", method= RequestMethod.GET)
@@ -42,6 +49,14 @@ public class HelloController {
         log.info("controller test begin ---------------");
         testThreadPool.test();
         log.info("controller test end ---------------");
+    }
+
+    @RequestMapping("/query/async")
+    @ResponseBody
+    public List<User> queryAsync() {
+        List<User> users  = queryDataByPageAsync.queryUserAsync();
+        log.info("controller queryAsync ent------------");
+        return users;
     }
 
 }
